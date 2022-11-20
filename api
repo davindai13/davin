@@ -1,0 +1,18 @@
+import requests
+import pandas as pd
+
+
+
+w = requests.get("http://api.weatherunlocked.com/api/forecast/37.548271,-121.988571?app_id=5d296390&app_key=447f1f303000c2cac697b6de1cda2a15")
+ww = w.json()
+# print(ww)
+
+for k in ww:
+    for v in range(len(ww[k])):       
+         print(ww[k][v]['temp_max_f'])
+            
+
+for k in ww:
+    for v in range(len(ww[k])): 
+        for a in zip(ww[k][v]['Timeframes']):
+            print(a)
